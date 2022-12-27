@@ -1,0 +1,29 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_config
+uration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file"
+                          xsi:type="string">Magento_Theme/images/logo.png
+                </argument>
+                <argument name="logo_img_width"
+                          xsi:type="number">200
+                </argument>
+                <argument name="logo_img_height" xsi:type="number">200</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="main">
+            <container name="content.top" label="Main Content Top">
+                <block name="main_css_preloader" as="main_css_preloader"
+                       template="Magento_Theme::html/main_css_preloader.phtml"
+                       ifconfig="dev/css/use_css_critical_path"/>
+            </container>
+            <container name="content" label="Main Content Area"/>
+            <container name="content.aside" label="Main Content Aside"/>
+            <container name="content.bottom" label="Main Content Bottom"/>
+        </referenceContainer>
+
+        <referenceBlock name="copyright" remove="true"/>
+    </body>
+</page>
